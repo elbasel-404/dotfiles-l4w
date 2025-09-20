@@ -61,8 +61,9 @@ For users who prefer to configure everything manually or want to understand each
 📖 **[Complete Manual Installation Guide](./MANUAL_INSTALLATION_GUIDE.md)**
 
 The manual guide includes:
-- Step-by-step package installation for Arch and Fedora
+- Step-by-step package installation for Arch, Fedora, and NixOS
 - Detailed configuration file setup
+- NixOS declarative configuration examples
 - Service configuration and troubleshooting
 - Validation script to verify your setup
 - Essential keybindings and usage examples

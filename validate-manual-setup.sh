@@ -6,6 +6,22 @@ echo "🔍 ML4W Hyprland Manual Setup Validation"
 echo "========================================"
 echo
 
+# Detect the distribution
+if [ -f /etc/nixos/configuration.nix ]; then
+    DISTRO="nixos"
+    echo "🐧 Detected: NixOS"
+elif [ -f /etc/arch-release ]; then
+    DISTRO="arch"
+    echo "🐧 Detected: Arch Linux"
+elif [ -f /etc/fedora-release ]; then
+    DISTRO="fedora"
+    echo "🐧 Detected: Fedora"
+else
+    DISTRO="unknown"
+    echo "🐧 Detected: Unknown distribution"
+fi
+echo
+
 # Color codes for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -55,6 +71,36 @@ check_service() {
         return 1
     fi
 }
+
+# Function to check NixOS configuration
+check_nixos_config() {
+    if [ "$DISTRO" = "nixos" ]; then
+        echo "Checking NixOS-specific configuration..."
+        echo "--------------------------------------"
+        
+        if grep -q "programs.hyprland.enable = true" /etc/nixos/configuration.nix 2>/dev/null; then
+            echo -e "${GREEN}✓${NC} Hyprland is enabled in NixOS configuration"
+        else
+            echo -e "${YELLOW}!${NC} Hyprland may not be enabled in /etc/nixos/configuration.nix"
+        fi
+        
+        if grep -q "xdg-desktop-portal-hyprland" /etc/nixos/configuration.nix 2>/dev/null; then
+            echo -e "${GREEN}✓${NC} XDG desktop portal is configured"
+        else
+            echo -e "${YELLOW}!${NC} XDG desktop portal may not be configured"
+        fi
+        
+        if command -v home-manager >/dev/null 2>&1; then
+            echo -e "${GREEN}✓${NC} Home Manager is available"
+        else
+            echo -e "${YELLOW}!${NC} Home Manager not found (not required but recommended)"
+        fi
+        echo
+    fi
+}
+
+# Run NixOS-specific checks first
+check_nixos_config
 
 echo "Checking core Hyprland components..."
 echo "-----------------------------------"
@@ -189,6 +235,15 @@ echo "If you see mostly green checkmarks, your manual installation is likely cor
 echo "Yellow warnings (!) may be normal depending on your system state."
 echo "Red errors (✗) indicate missing components that should be installed/configured."
 echo
+
+if [ "$DISTRO" = "nixos" ]; then
+    echo "NixOS-specific notes:"
+    echo "- Package installations should be done declaratively in /etc/nixos/configuration.nix"
+    echo "- Run 'sudo nixos-rebuild switch' after configuration changes"
+    echo "- Services are managed through the NixOS configuration, not systemctl commands"
+    echo
+fi
+
 echo "To start Hyprland: run 'Hyprland' from a TTY or select it from your display manager."
 echo "Key shortcuts to remember:"
 echo "  SUPER + RETURN  - Terminal"
