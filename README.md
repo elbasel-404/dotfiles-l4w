@@ -20,7 +20,9 @@ You can find the Hyprland Installation instructions here: https://wiki.hyprland.
 
 > PLEASE NOTE: Every Linux distribution, setup, and personal configuration can be different. Therefore, I cannot guarantee that the ML4W Dotfiles will work everywhere. You install at your own risk.
 
-### Arch Linux (based)
+### Automated Installation
+
+#### Arch Linux (based)
 
 Recommended is to install the Hyprland Desktop Profile from archinstall first.
 
@@ -46,11 +48,24 @@ ml4w-hyprland-setup
 
 Please rebuild all packages to ensure that you get the latest commit.
 
-### Fedora Linux (based)
+#### Fedora Linux (based)
 
 ```shell
 bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup-fedora.sh)
 ```
+
+### Manual Installation
+
+For users who prefer to configure everything manually or want to understand each component:
+
+📖 **[Complete Manual Installation Guide](./MANUAL_INSTALLATION_GUIDE.md)**
+
+The manual guide includes:
+- Step-by-step package installation for Arch and Fedora
+- Detailed configuration file setup
+- Service configuration and troubleshooting
+- Validation script to verify your setup
+- Essential keybindings and usage examples
 
 ## Troubleshooting
 
