@@ -1,3 +1,65 @@
+Version 2.9.9.2
+--------------------------------------------------------
+- New ML4W Logo
+- Compatible with Hyprland 0.51.x
+- New default wallpaper
+- New swaync layout with dark or light theme support
+
+Version 2.9.9.1
+--------------------------------------------------------
+- Full dark and light theme support. Change preferred theme in nw-look. A listener script will reload waybar and nwg-dock-hyprland when the file ~/.config/gtk-4.0/settings.ini will be changed.
+- Waybar Theme ML4W Modern Dark and Light consolidated into ML4W Modern Theme
+- Wallust removed as color generator. Not needed anymore for kitty colors.
+- Fish configuration added and shell selection script extended.
+- New default wallpaper
+- New sidepad feature to move windows to the right side of the screen. https://mylinuxforwork.github.io/dotfiles/usage/sidepad
+- New focus script: Select window and switch to workspace with CTRL + Tab
+- New Sidebar App layout with Light/Dark theme toggle button
+
+Version 2.9.9
+--------------------------------------------------------
+- Legacy installer removed and folders restructured 
+- Font Awesome 7 support added
+- Optimized setup script to reduce the installation time of dependencies
+- Waybar with blurred background as default (powered by Hyprland). Can be switched off in the Dotfiles Settings app/Appearance/Decoration Variations -> no blur
+- ML4W blur theme removed. See above to toggle blur
+- Add Display Zoom: Zoom in with SUPER+SHIFT+Mousewheel up, Zoom out with SUPER+SHIFT+Mousewheel down, Reset Zoom with SUPER+SHIFT+Z
+- Link to ML4W Wallpaper Bank added to Welcome App main menu
+- Specific variations for game mode added to start Hyprland in game mode: Settings app, Appearance: Decoration: gamemode.conf, Window: gamemode.conf, Animation: disabled.conf
+
+Version 2.9.8.8
+--------------------------------------------------------
+- Optimized setup scripts for Arch, Fedora and openSuse
+- eza, matugen and wallust now shipped with the dotfiles to speedup installation (cargo not needed anymore)
+
+Version 2.9.8.7
+--------------------------------------------------------
+- New Wiki launched under https://mylinuxforwork.github.io/dotfiles/
+- Configuration prepared for Dotfiles Installer https://mylinuxforwork.github.io/dotfiles-installer/ with setup scripts for Arch Linux, Fedora and openSuse Tumbleweed
+- All ML4W apps are following now the GTK4 Theme. Please make sure that the ml4w-repo is added to your system and all ml4w flatpaks are installed system wide, not user
+- Improved waybar modern theme
+- Installation of Sequoia Theme removed from the installation script 
+- You can restore the standard SDDM Theme and install your custom display manager individually.
+- How to install Sequoia Theme guide on ML4W Dotfiles Wiki https://github.com/mylinuxforwork/dotfiles/wiki/Customize-sddm
+- Wallust for terminal color generation
+- New immediate screenshot keybindings: `SUPER+ALT+F` for fullscreen, `SUPER+ALT+S` for area screenshot
+- AUR packages of ML4W Dotfiles removed. Please use the install script from https://mylinuxforwork.github.io/dotfiles/
+- Default Wallpaper folder moved to `~/.config/ml4w/wallpapers` and new default wallpaper
+
+Version 2.9.8.6
+--------------------------------------------------------
+- Matugen color theme improvements
+- Wallust for terminal color generation
+
+Version 2.9.8.5
+--------------------------------------------------------
+- Pywal has been replaced with matugen
+- All color themes improved for matugen
+- New kitty color theme based on matugen
+- Colored, mixed and bottom waybar themes removed
+- New default wallpaper
+- eza will be installed with cargo
+
 Version 2.9.8.4
 --------------------------------------------------------
 - New app icons for ML4W apps
@@ -98,7 +160,7 @@ Version 2.9.6.4
 - Added pywalfox support to color Firefox based on wallpaper colors
 - Fixed eza icons on zsh terminal
 - Subfolders in .config can be protected with an empty file PROTECTED
-- OhMyPosh promt replaces Starship prompt
+- OhMyPosh prompt replaces Starship prompt
 - Networkmanager applet can be toggled with right click on waybar network module
 - Three more blue light screen shaders with different intensities
 
@@ -156,7 +218,7 @@ https://github.com/mylinuxforwork/dotfiles/milestone/1?closed=1
 - Add Flatpak installation option to the installation script https://github.com/mylinuxforwork/dotfiles/issues/43
 - Position of dunst can be changed in the ML4W Dotfiles App
 - Screenshot script based on grimblast.
-- New screenshot editor pinta added to package list. Editor can be changed in teh ML4W Dotfiles app and in dotfiles/.settings/screenshot-editor.sh
+- New screenshot editor pinta added to package list. Editor can be changed in the ML4W Dotfiles app and in dotfiles/.settings/screenshot-editor.sh
 
 Version 2.9.3
 https://github.com/mylinuxforwork/dotfiles/blob/main/CHANGELOG.md
@@ -232,7 +294,7 @@ https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.9
 - Added sidebar menu. Start with click on ML4W Logo in Waybar. Right click starts the welcome app
 - Updated hyprlock screen showing the wallpaper in a circle. hyprlock 3 required
 - Waybar Taskbar Module hidden by default. Can be enabled again in the ML4W Settings App
-- Hyprpaper is now the default wallpaper engine. swww can be activiated
+- Hyprpaper is now the default wallpaper engine. swww can be activated
 - Animations can be disabled in the Dotfiles Settings app
 - Animations can be toggled (enabled/disabled) temporarily with SUPER + SHIFT + A
 - Keyboard layout is part of the system information module of waybar
